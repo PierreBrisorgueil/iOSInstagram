@@ -39,7 +39,7 @@ struct Post {
                     var postLikes = json["likes"]["count"].int
                     var postText = json["caption"]["text"].string
                     if(postText == nil){
-                        postText = "toto"
+                        postText = "There is no description or Tags for this publication."
                     }
                     
                     var post = Post(comments: postComments!, img: postimgUrl!, likes: postLikes!, text: postText!)
