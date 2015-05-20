@@ -15,7 +15,7 @@ IOS application sample for Instagram, just parse the flow of an account instagra
 * Add your Token and Account Id
 * Go in the folder with your terminal
 * `pod install`(for install pod, [click me](https://cocoapods.org))
-* Launch the application :) !
+*  open Sample-Swift_instagram.xcodeproj/
 
 # Questions ? 
 
