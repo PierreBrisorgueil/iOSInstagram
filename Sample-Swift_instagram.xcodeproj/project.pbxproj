@@ -37,20 +37,6 @@
 			remoteGlobalIDString = EE78E9DE7258877C9E1C0BA6;
 			remoteInfo = Pods;
 		};
-		2C56E8561B02882C00925277 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C56E84D1B02882C00925277 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 986C2B47CAA34AD8C5C8CD8F;
-			remoteInfo = "Pods-Alamofire";
-		};
-		2C56E8581B02882C00925277 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C56E84D1B02882C00925277 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AD1BFFD7769F575F67CF6467;
-			remoteInfo = "Pods-HanekeSwift";
-		};
 		2C56E85A1B02882C00925277 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2C56E84D1B02882C00925277 /* Pods.xcodeproj */;
@@ -129,8 +115,8 @@
 				2C5DCB891B04CCE600D6BF51 /* APIController.swift */,
 				2CCA74901B0C80C20047C7FA /* Config */,
 				2CCA748D1B0C7C540047C7FA /* Controllers */,
-				2CCA748E1B0C7C7C0047C7FA /* Model */,
-				2CCA748F1B0C7C8C0047C7FA /* Custom */,
+				2CCA748E1B0C7C7C0047C7FA /* Models */,
+				2CCA748F1B0C7C8C0047C7FA /* Customs */,
 				2C0E79D51B01DAA9003644A5 /* Main.storyboard */,
 				2C0E79D81B01DAA9003644A5 /* Images.xcassets */,
 				2C0E79DA1B01DAA9003644A5 /* LaunchScreen.xib */,
@@ -168,8 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				2C56E8551B02882C00925277 /* Pods.framework */,
-				2C56E8571B02882C00925277 /* Alamofire.framework */,
-				2C56E8591B02882C00925277 /* Haneke.framework */,
 				2C56E85B1B02882C00925277 /* SwiftyJSON.framework */,
 			);
 			name = Products;
@@ -184,20 +168,20 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		2CCA748E1B0C7C7C0047C7FA /* Model */ = {
+		2CCA748E1B0C7C7C0047C7FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				2C5DCB871B04C57500D6BF51 /* post.swift */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
-		2CCA748F1B0C7C8C0047C7FA /* Custom */ = {
+		2CCA748F1B0C7C8C0047C7FA /* Customs */ = {
 			isa = PBXGroup;
 			children = (
 				2C5DCB811B04C41200D6BF51 /* Cell.swift */,
 			);
-			name = Custom;
+			name = Customs;
 			sourceTree = "<group>";
 		};
 		2CCA74901B0C80C20047C7FA /* Config */ = {
@@ -317,20 +301,6 @@
 			fileType = wrapper.framework;
 			path = Pods.framework;
 			remoteRef = 2C56E8541B02882C00925277 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2C56E8571B02882C00925277 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 2C56E8561B02882C00925277 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2C56E8591B02882C00925277 /* Haneke.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Haneke.framework;
-			remoteRef = 2C56E8581B02882C00925277 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		2C56E85B1B02882C00925277 /* SwiftyJSON.framework */ = {
