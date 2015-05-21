@@ -21,14 +21,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="bDL-FG-20C" customClass="Cell" customModule="Sample_Swift_instagram" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="bDL-FG-20C" customClass="Cell" customModule="Sample_Swift_instagram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bDL-FG-20C" id="mrN-Ov-WKJ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WEc-Uj-YkS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="303"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WEc-Uj-YkS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="320" id="Qu0-Y3-MAU"/>
                                                     </constraints>
@@ -98,6 +98,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="myImageView" destination="WEc-Uj-YkS" id="xnP-bY-dsO"/>
                                             <outlet property="myLabel" destination="fth-i7-r87" id="Amw-K7-Mjk"/>
@@ -119,7 +120,15 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uJZ-oL-Buq" secondAttribute="bottom" id="A2a-rV-D4B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uJZ-oL-Buq" secondAttribute="trailing" constant="-16" id="B0I-wO-xdG"/>
                             <constraint firstItem="uJZ-oL-Buq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="INv-zt-ipY"/>
+                            <constraint firstItem="uJZ-oL-Buq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SIi-G3-EXh"/>
+                            <constraint firstAttribute="trailing" secondItem="uJZ-oL-Buq" secondAttribute="trailing" id="biu-hp-fsG"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8Nu-Yz-Hx6"/>
+                                <exclude reference="B0I-wO-xdG"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Instagram" id="daZ-Yi-9aA"/>
                     <connections>
@@ -200,6 +209,8 @@
                             <constraint firstItem="iEf-6z-dTK" firstAttribute="top" secondItem="8gE-e4-qyr" secondAttribute="bottom" id="JmS-eg-ocl"/>
                             <constraint firstItem="iEf-6z-dTK" firstAttribute="top" secondItem="8gE-e4-qyr" secondAttribute="bottom" constant="89" id="KLQ-0l-3DA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iEf-6z-dTK" secondAttribute="trailing" constant="-16" id="TR8-cH-YDt"/>
+                            <constraint firstAttribute="trailing" secondItem="iEf-6z-dTK" secondAttribute="trailing" id="Wbq-TU-8hD"/>
+                            <constraint firstItem="iEf-6z-dTK" firstAttribute="leading" secondItem="DhR-gf-s9w" secondAttribute="leading" id="b7p-9a-Fqb"/>
                             <constraint firstItem="iEf-6z-dTK" firstAttribute="leading" secondItem="DhR-gf-s9w" secondAttribute="leadingMargin" constant="-16" id="bwR-E6-8mX"/>
                             <constraint firstItem="iEf-6z-dTK" firstAttribute="top" secondItem="DhR-gf-s9w" secondAttribute="topMargin" id="dup-lW-7Mk"/>
                             <constraint firstItem="iEf-6z-dTK" firstAttribute="top" secondItem="8gE-e4-qyr" secondAttribute="bottom" id="htY-sJ-d0h"/>
@@ -213,9 +224,11 @@
                                 <exclude reference="EMK-7j-T81"/>
                                 <exclude reference="JmS-eg-ocl"/>
                                 <exclude reference="KLQ-0l-3DA"/>
+                                <exclude reference="TR8-cH-YDt"/>
                                 <exclude reference="bwR-E6-8mX"/>
                                 <exclude reference="htY-sJ-d0h"/>
                                 <exclude reference="q9A-sM-X7c"/>
+                                <exclude reference="vDm-5C-pJW"/>
                                 <exclude reference="xhG-5e-bPA"/>
                             </mask>
                         </variation>
