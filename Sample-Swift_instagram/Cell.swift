@@ -35,7 +35,7 @@ class Cell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         if(selected) {
-            myView.backgroundColor = UIColor(netHex: GlobalConstants.BacgroundColorTableViewDetailView).colorWithAlphaComponent(0.5)
+            myView.backgroundColor = UIColor(netHex: GlobalConstants.BackgroundColorTableViewDetailView).colorWithAlphaComponent(0.5)
         }
     }
     
@@ -43,7 +43,7 @@ class Cell: UITableViewCell {
         super.setHighlighted(highlighted, animated: animated)
         
         if(highlighted) {
-            myView.backgroundColor = UIColor(netHex: GlobalConstants.BacgroundColorTableViewDetailView).colorWithAlphaComponent(0.5)
+            myView.backgroundColor = UIColor(netHex: GlobalConstants.BackgroundColorTableViewDetailView).colorWithAlphaComponent(0.5)
         }
     }
     

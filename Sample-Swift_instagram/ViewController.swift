@@ -112,7 +112,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Custom
         // ---------------------
         self.tableView.rowHeight =  self.view.bounds.width
-        cell.myView?.backgroundColor = UIColor(netHex: GlobalConstants.BacgroundColorTableViewDetailView).colorWithAlphaComponent(0.5)
+        cell.myView?.backgroundColor = UIColor(netHex: GlobalConstants.BackgroundColorTableViewDetailView).colorWithAlphaComponent(0.5)
         // ---------------------
         
         // animation
