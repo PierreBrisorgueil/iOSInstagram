@@ -34,7 +34,17 @@ class Cell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        // Configure the view for the selected state
+        if(selected) {
+            myView.backgroundColor = UIColor(netHex: GlobalConstants.BacgroundColorTableViewDetailView).colorWithAlphaComponent(0.5)
+        }
+    }
+    
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        
+        if(highlighted) {
+            myView.backgroundColor = UIColor(netHex: GlobalConstants.BacgroundColorTableViewDetailView).colorWithAlphaComponent(0.5)
+        }
     }
     
 }

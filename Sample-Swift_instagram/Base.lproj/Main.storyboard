@@ -117,8 +117,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uJZ-oL-Buq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="8Nu-Yz-Hx6"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uJZ-oL-Buq" secondAttribute="bottom" id="A2a-rV-D4B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uJZ-oL-Buq" secondAttribute="trailing" constant="-16" id="B0I-wO-xdG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uJZ-oL-Buq" secondAttribute="bottom" id="IEJ-Mc-AbY"/>
                             <constraint firstItem="uJZ-oL-Buq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="INv-zt-ipY"/>
                             <constraint firstItem="uJZ-oL-Buq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SIi-G3-EXh"/>
                             <constraint firstAttribute="trailing" secondItem="uJZ-oL-Buq" secondAttribute="trailing" id="biu-hp-fsG"/>

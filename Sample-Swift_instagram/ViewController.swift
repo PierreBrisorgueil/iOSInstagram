@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol {
     
-    
     /*************************************************/
     // Main
     /*************************************************/
@@ -30,13 +29,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     /*************************/
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         // custom
         // ---------------------
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "test.jpg"))
         // ---------------------
-        
         
         // get data
         api = APIController(delegate: self)
@@ -111,6 +108,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             })
         }
         
+        
+        // Custom
+        // ---------------------
+        self.tableView.rowHeight =  self.view.bounds.width
+        cell.myView?.backgroundColor = UIColor(netHex: GlobalConstants.BacgroundColorTableViewDetailView).colorWithAlphaComponent(0.5)
+        // ---------------------
+        
         // animation
         // ---------------------
         cell.myLabel?.alpha = 0.3
@@ -143,7 +147,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 cell.myView?.alpha = 1
             }, completion: nil)
         // ---------------------
-        self.tableView.rowHeight =  self.view.bounds.width
 
         
         return cell
@@ -167,6 +170,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             postViewController.post = selectedPost
         }
     }
+
     
     /*************************************************/
     // Functions
@@ -190,6 +194,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         })
     }
+    
+    
 
 }
 
