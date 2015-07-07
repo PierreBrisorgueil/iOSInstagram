@@ -63,10 +63,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let post = posts[indexPath.row]
         cell.myLabel.text = "✍ " + String(post.comments)
         cell.myLabel2.text = String(post.likes) + " ♥︎"
+        cell.myImageView?.image = UIImage(named: "picture")
 
-        // Start by setting the cell's image to a static file
-        // Without this, we will end up without an image view!
-        //cell.imageView?.image = UIImage(named: "test")
+ 
         
         let imgURLString = post.img
         let imgURL = NSURL(string: imgURLString)!
