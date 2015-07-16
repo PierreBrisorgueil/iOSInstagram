@@ -42,26 +42,31 @@ class APIController {
         let url = NSURL(string: path)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(url!, completionHandler: {data, response, error -> Void in
-            println("Task completed")
+            print("Task completed")
             if(error != nil) {
                 // If there is an error in the web request, print it to the console
-                println(error.localizedDescription)
+                print(error!.localizedDescription)
             }
-            var err: NSError?
-            if let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as? NSDictionary {
-                if(err != nil) {
-                    // If there is an error parsing JSON, print it to the console
-                    println("JSON Error \(err!.localizedDescription)")
-                }
-                if let results: NSArray = jsonResult["data"] as? NSArray {
+            
+            do {
+                let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                if let results = jsonResult["data"] as? NSArray {
                     self.delegate.didReceiveAPIResults(results)
                 }
+            } catch let error as NSError {
+                print(error.description)
             }
+            catch {
+                print("no clue what went wrong")
+            }
+
+            
+
         })
         
         // The task is just an object with all these properties set
         // In order to actually make the web request, we need to "resume"
-        task.resume()
+        task!.resume()
     }
     
     func instagram() {

@@ -75,6 +75,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.myImageView.image = img
         }
         else {
+            
             // The image isn't cached, download the img data
             // We should perform this in a background thread
             let request: NSURLRequest = NSURLRequest(URL: imgURL)
@@ -82,7 +83,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             NSURLConnection.sendAsynchronousRequest(request, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
                 if error == nil {
                     // Convert the downloaded data in to a UIImage object
-                    let image = UIImage(data: data)
+                    let image = UIImage(data: data!)
                     // Store the image in to our cache
                     self.imageCache[imgURLString] = image
                     // Update the cell
@@ -94,7 +95,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                             // ---------------------
                             cellToUpdate.myImageView?.alpha = 0
                             UIView.animateWithDuration(0.5, delay: 0,
-                                options: nil, animations: {
+                                options: [], animations: {
                                     cellToUpdate.myImageView?.alpha = 1
                                 }, completion: nil)
                             // ---------------------
@@ -102,7 +103,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     })
                 }
                 else {
-                    println("Error: \(error.localizedDescription)")
+                    print("Error: \(error!.localizedDescription)")
                 }
             })
         }
@@ -119,11 +120,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.myLabel?.alpha = 0.3
         cell.myLabel?.center.x -= view.bounds.width
         UIView.animateWithDuration(0.5, delay: 0.1,
-            options: nil, animations: {
+            options: [], animations: {
                 cell.myLabel?.center.x += self.view.bounds.width
             }, completion: { _ in
                 UIView.animateWithDuration(0.4, delay: 0,
-                    options: nil, animations: {
+                    options: [], animations: {
                         cell.myLabel?.alpha = 1
                     }, completion: nil)
         })
@@ -131,18 +132,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.myLabel2?.alpha = 0.3
         cell.myLabel2?.center.x += view.bounds.width
         UIView.animateWithDuration(0.5, delay: 0.1,
-            options: nil, animations: {
+            options: [], animations: {
                 cell.myLabel2?.center.x -= self.view.bounds.width
             }, completion: { _ in
                 UIView.animateWithDuration(0.4, delay: 0,
-                    options: nil, animations: {
+                    options: [], animations: {
                         cell.myLabel2?.alpha = 1
                     }, completion: nil)
         })
         
         cell.myView?.alpha = 0
         UIView.animateWithDuration(0.5, delay: 0,
-            options: nil, animations: {
+            options: [], animations: {
                 cell.myView?.alpha = 1
             }, completion: nil)
         // ---------------------
@@ -164,8 +165,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     /*************************/
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let postViewController: PostController = segue.destinationViewController as? PostController {
-            var postIndex = tableView!.indexPathForSelectedRow()!.row
-            var selectedPost = self.posts[postIndex]
+            let postIndex = tableView!.indexPathForSelectedRow!.row
+            let selectedPost = self.posts[postIndex]
             postViewController.post = selectedPost
         }
     }

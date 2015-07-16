@@ -29,7 +29,7 @@ class PostController: UIViewController {
     
     // init
     /*************************/
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -64,10 +64,10 @@ class PostController: UIViewController {
         myText.text = self.post?.text
         // resize height of text view
         myText.scrollEnabled = false
-        var contentSize = myText.sizeThatFits(CGSizeMake(myText.frame.size.width, CGFloat.max))
-        for c in myText.constraints() {
+        let contentSize = myText.sizeThatFits(CGSizeMake(myText.frame.size.width, CGFloat.max))
+        for c in myText.constraints {
             if c.isKindOfClass(NSLayoutConstraint) {
-                var constraint = c as! NSLayoutConstraint
+                let constraint = c as NSLayoutConstraint
                 if constraint.firstAttribute == NSLayoutAttribute.Height {
                     constraint.constant = contentSize.height
                     break
@@ -83,7 +83,7 @@ class PostController: UIViewController {
     
     // Other
     /*************************/
-    func imageResize (#image:UIImage, sizeChange:CGSize)-> UIImage{
+    func imageResize (image image:UIImage, sizeChange:CGSize)-> UIImage{
         
         let hasAlpha = true
         let scale: CGFloat = 0.0 // Use scale factor of main screen

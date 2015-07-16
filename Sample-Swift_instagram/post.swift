@@ -34,15 +34,15 @@ struct Post {
             if let kind = json["type"].string {
                 if kind=="image" {
                     
-                    var postimgUrl = json["images"]["standard_resolution"]["url"].string
-                    var postComments = json["comments"]["count"].int
-                    var postLikes = json["likes"]["count"].int
+                    let postimgUrl = json["images"]["standard_resolution"]["url"].string
+                    let postComments = json["comments"]["count"].int
+                    let postLikes = json["likes"]["count"].int
                     var postText = json["caption"]["text"].string
                     if(postText == nil){
                         postText = "There is no description or Tags for this publication."
                     }
                     
-                    var post = Post(comments: postComments!, img: postimgUrl!, likes: postLikes!, text: postText!)
+                    let post = Post(comments: postComments!, img: postimgUrl!, likes: postLikes!, text: postText!)
                     posts.append(post)
 
                 }
