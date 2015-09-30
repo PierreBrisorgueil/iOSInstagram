@@ -48,17 +48,21 @@ class APIController {
                 print(error!.localizedDescription)
             }
             
+            //let jsonString = "{\"name\":\"Fred\", \"age\":40}"
+            
+            //let jsonData = jsonString.dataUsingEncoding(NSUTF8StringEncoding)!
+            
+            
             do {
                 let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                //print(jsonResult["data"])
                 if let results = jsonResult["data"] as? NSArray {
                     self.delegate.didReceiveAPIResults(results)
                 }
             } catch let error as NSError {
                 print(error.description)
             }
-            catch {
-                print("no clue what went wrong")
-            }
+
 
             
 
@@ -66,7 +70,7 @@ class APIController {
         
         // The task is just an object with all these properties set
         // In order to actually make the web request, we need to "resume"
-        task!.resume()
+        task.resume()
     }
     
     func instagram() {
