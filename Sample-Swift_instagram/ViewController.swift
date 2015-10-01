@@ -78,9 +78,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             // The image isn't cached, download the img data
             // We should perform this in a background thread
-            let request: NSURLRequest = NSURLRequest(URL: imgURL)
-            let mainQueue = NSOperationQueue.mainQueue()
-            NSURLConnection.sendAsynchronousRequest(request, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
+            
+            let session = NSURLSession.sharedSession()
+            let request = NSURLRequest(URL: imgURL)
+            let dataTask = session.dataTaskWithRequest(request) { (data:NSData?, response:NSURLResponse?, error:NSError?) -> Void in
                 if error == nil {
                     // Convert the downloaded data in to a UIImage object
                     let image = UIImage(data: data!)
@@ -105,7 +106,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 else {
                     print("Error: \(error!.localizedDescription)")
                 }
-            })
+            }
+            dataTask.resume()
         }
         
         
