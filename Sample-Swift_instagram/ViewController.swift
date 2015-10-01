@@ -167,9 +167,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     /*************************/
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let postViewController: PostController = segue.destinationViewController as? PostController {
-            let postIndex = tableView!.indexPathForSelectedRow!.row
+            let postIndex = tableView.indexPathForSelectedRow!.row
             let selectedPost = self.posts[postIndex]
             postViewController.post = selectedPost
+            postViewController.chachedImage = self.imageCache[selectedPost.img]!
         }
     }
 

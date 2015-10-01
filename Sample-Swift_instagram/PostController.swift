@@ -25,6 +25,7 @@ class PostController: UIViewController {
     // Var
     /*************************/
     var post: Post?
+    var chachedImage: UIImage?
 
     
     // init
@@ -56,7 +57,7 @@ class PostController: UIViewController {
         // ---------------------
         
         // Set Data
-        myImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: self.post!.img)!)!)
+        myImage.image = self.chachedImage
         // resize image
         let size = CGSizeMake(self.view.bounds.width, self.view.bounds.width)
         myImage.image! = imageResize(image: myImage.image!,sizeChange: size)
